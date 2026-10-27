@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>Flappy Cat 🐱</title>
+<title>Flappy Catto 🐱</title>
 <link rel="icon" type="image/png" href="cat.png">
 <link rel="apple-touch-icon" href="cat.png">
 <style>
@@ -31,7 +31,7 @@
 <p class="hint score100-note" id="score100Best">Best score: 100</p>
 </div></div>
 <div class="overlay hidden" id="countdownOverlay"><div class="panel"><h2>GET READY!</h2><div class="countdown-number" id="countdownNumber">3</div><p>Back to flying in...</p></div></div>
-</div><div class="bottom"><span>⌨️ SPACE to fly · Set Volume to Max for Better Experience · Made with ♡ by Deekshith Rokkam</span><div style="display:flex;gap:7px"><button class="fullscreen-btn" id="fullscreenBtn">⛶ Fullscreen</button><button class="sound-btn" id="muteBtn">🔊 Sound on</button></div></div></main>
+</div><div class="bottom"><span>⌨️ SPACE to fly · Set Volume to Max for Better Experience · Score 100 for a Surprise · Made with ♡ by Deekshith Rokkam</span><div style="display:flex;gap:7px"><button class="fullscreen-btn" id="fullscreenBtn">⛶ Fullscreen</button><button class="sound-btn" id="muteBtn">🔊 Sound on</button></div></div></main>
 <audio id="weee" src="weee.mp3" preload="auto"></audio><audio id="fah" src="fah.mp3" preload="auto"></audio><audio id="introSound" src="Koun hai re - QuickSounds.com.mp3" preload="auto"></audio><audio id="typingSound" src="fart.mp3" preload="auto"></audio><audio id="startSound" src="Chalo - QuickSounds.com.mp3" preload="auto"></audio><audio id="score50Sound" src="score50-reaction.mp3" preload="auto"></audio><audio id="macQuackSound" src="mac-quack.mp3" preload="auto"></audio>
 <script>
 (()=>{const c=document.getElementById('game'),ctx=c.getContext('2d'),scoreEl=document.getElementById('score'),bestEl=document.getElementById('best'),startOverlay=document.getElementById('start'),overOverlay=document.getElementById('over'),weee=document.getElementById('weee'),fah=document.getElementById('fah'),introSound=document.getElementById('introSound'),typingSound=document.getElementById('typingSound'),startSound=document.getElementById('startSound'),playerNameInput=document.getElementById('playerName'),welcomeText=document.getElementById('welcomeText'),muteBtn=document.getElementById('muteBtn');let playerName='',introPlayed=false,muted=false,state='ready',score=0,best=Number(localStorage.getItem('flappyCatBest')||0),cat,pipes,frame=0,clouds=[],level='easy',nextPipeFrame=80,lastGapCenter=310,pipeCount=0;const settings={easy:{gap:224,speed:1.25,gravity:.082,lift:-2.75,spawnMin:155,spawnMax:205},medium:{gap:190,speed:1.7,gravity:.105,lift:-3.05,spawnMin:135,spawnMax:180},hard:{gap:158,speed:2.15,gravity:.128,lift:-3.35,spawnMin:118,spawnMax:158}};bestEl.textContent=best;
